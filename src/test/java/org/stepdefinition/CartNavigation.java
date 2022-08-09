@@ -38,12 +38,20 @@ public class CartNavigation extends BaseClass {
 	public void userShouldNavigateToTheSecondPage() {
 		PojoFlip pl = new PojoFlip();
 		clk(pl.getNextPage());
+		iWait(3);
 	}
 
 	@When("User should click the wishlist icon and confirm the message")
 	public void userShouldClickTheWishlistIconAndConfirmTheMessage() {
 		PojoFlip pl = new PojoFlip();
-		clk(pl.getWishList());
+		try {
+			clk(pl.getWishList());
+		} catch (Exception e) {
+			System.out.println("PRODUCT NOT AVAILABLE: Odonil Room Freshening Sandal Bouquet Spray");
+			System.exit(0);
+		}
+		
+		//Odonil Room Freshening Sandal Bouquet Spray
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Please login for wishlisting a product']")));
 		String text1 = pl.getMessage1().getText();
@@ -53,10 +61,10 @@ public class CartNavigation extends BaseClass {
 	}
 
 	@When("User should close the login page and move to the product page")
-	public void userShouldCloseTheLoginPageAndMoveToTheProductPage() {
+	public void userShouldCloseTheLoginPageAndMoveToTheProductPage() throws InterruptedException {
 		PojoFlip pl = new PojoFlip();
 		clk(pl.getClosePop());
-		iWait(3);
+		Thread.sleep(5000);
 		clk(pl.getProductpage());
 		iWait(2);
 

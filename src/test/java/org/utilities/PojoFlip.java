@@ -26,7 +26,7 @@ public class PojoFlip extends BaseClass {
 	@FindBy(xpath = "(//a[@class='ge-49M'])[1]")
 	private WebElement nextPage;
 
-	@FindBy(xpath = "//*[text()='Odonil Room Freshening Sandal Bouquet Spray']/..//div//*[name()='svg']")
+	@FindBy(xpath = "//*[text()='KARDECK Aqua Diffuser']/..//div//*[name()='svg']")
 	private WebElement wishList;
 
 
@@ -38,7 +38,7 @@ public class PojoFlip extends BaseClass {
 	private WebElement closePop;
 
 
-	@FindBy(xpath = "//*[text()='Odonil Room Freshening Sandal Bouquet Spray']")
+	@FindBy(xpath = "//*[text()='KARDECK Aqua Diffuser']")
 	private WebElement Productpage;
 
 	@FindBy(xpath = "//span[@class='_2P_LDn']")
@@ -71,7 +71,7 @@ public class PojoFlip extends BaseClass {
 	@FindBy(xpath = "//div[text()='Cancel']//following-sibling::div")
 	private WebElement removed;
 
-	@FindBy(xpath = "//div[text()='Odonil Room Freshening Sandal Bouquet Spray has been removed from your saved list.']")
+	@FindBy(xpath = "//div[text()='KARDECK Aqua Diffuser has been removed from your saved list.']")
 	private WebElement message5;
 
 	public WebElement getClosepop() {
